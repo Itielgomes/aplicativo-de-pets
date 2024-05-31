@@ -67,14 +67,14 @@ public class Pet extends Animal {
     }
 
     public void cadastrarPet() {
-
+        System.out.println("Pet cadastrado com sucesso. ID: " + this.idPet);
     }
 
     public void atualizarPet() {
-
+        System.out.println("Pet atualizado com sucesso. ID: " + this.idPet);
     }
 
     public void excluirPet() {
-        
+        System.out.println("Pet excluído com sucesso. ID: " + this.idPet);
     }
 }
