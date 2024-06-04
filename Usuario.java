@@ -99,7 +99,7 @@ class Usuario {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Usuario[] usuarios = new Usuario[10]; // Array to store users
+        Usuario[] usuarios = new Usuario[10]; 
         int userCount = 0;
 
         Usuario loggedUser = null;
@@ -114,7 +114,7 @@ class Usuario {
             System.out.println("6. Sair");
 
             int opcao = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
 
             switch (opcao) {
                 case 1:
