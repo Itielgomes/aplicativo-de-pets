@@ -1,8 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
-public class Animal {
-    private static List<Animal> animais = new ArrayList<>();
+class Animal {
+    private static AtomicInteger idCounter = new AtomicInteger(1);
+
+
     private int idAnimal;
     private String nome;
     private int idade;
@@ -13,7 +16,7 @@ public class Animal {
     private int idResponsavel;
 
     public Animal(int idAnimal, String nome, int idade, String especie, String raca, String genero, String status, int idResponsavel) {
-        this.idAnimal = idAnimal;
+        this.idAnimal = idCounter.getAndIncrement();
         this.nome = nome;
         this.idade = idade;
         this.especie = especie;
@@ -88,33 +91,12 @@ public class Animal {
     }
 
     public void cadastrarAnimal() {
-        animais.add(this);
-        System.out.println("Animal cadastrado com sucesso. ID: " + this.idAnimal);
     }
 
     public void atualizarAnimal() {
-        for (Animal animal : animais) {
-            if (animal.getIdAnimal() == this.idAnimal) {
-                animal.setNome(this.nome);
-                animal.setIdade(this.idade);
-                animal.setEspecie(this.especie);
-                animal.setRaca(this.raca);
-                animal.setGenero(this.genero);
-                animal.setStatus(this.status);
-                animal.setIdResponsavel(this.idResponsavel);
-                System.out.println("Animal atualizado com sucesso. ID: " + this.idAnimal);
-                return;
-            }
-        }
-        System.out.println("Animal não encontrado para atualização. ID: " + this.idAnimal);
     }
 
     public void excluirAnimal() {
-        if (animais.removeIf(animal -> animal.getIdAnimal() == this.idAnimal)) {
-            System.out.println("Animal excluído com sucesso. ID: " + this.idAnimal);
-        } else {
-            System.out.println("Animal não encontrado para exclusão. ID: " + this.idAnimal);
-        }
     }
 
     public static List<Animal> animaisDoados(List<Animal> animais) {
