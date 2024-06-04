@@ -1,15 +1,14 @@
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-public class Denuncia {
+class Denuncia {
     private int idDenuncia;
     private int idAnimal;
     private int idDenunciante;
     private Date dataDenuncia;
     private String descricao;
 
-    private static List<Denuncia> denunciaList = new ArrayList<>();
+    static List<Denuncia> denunciaList = new ArrayList<>();
 
 
     public Denuncia(int idDenuncia, int idAnimal, int idDenunciante, Date dataDenuncia, String descricao) {
