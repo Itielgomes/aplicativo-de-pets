@@ -83,7 +83,6 @@ public class Pet extends Animal {
 
     public void cadastrarPet() {
         try {
-            // Lógica de cadastro do pet
             System.out.println("Pet cadastrado com sucesso. ID: " + this.idPet);
         } catch (Exception e) {
             System.err.println("Erro ao cadastrar pet: " + e.getMessage());
@@ -92,7 +91,6 @@ public class Pet extends Animal {
 
     public void atualizarPet() {
         try {
-            // Lógica de atualização do pet
             System.out.println("Pet atualizado com sucesso. ID: " + this.idPet);
         } catch (Exception e) {
             System.err.println("Erro ao atualizar pet: " + e.getMessage());
@@ -101,7 +99,6 @@ public class Pet extends Animal {
 
     public void excluirPet() {
         try {
-            // Lógica de exclusão do pet
             System.out.println("Pet excluído com sucesso. ID: " + this.idPet);
         } catch (Exception e) {
             System.err.println("Erro ao excluir pet: " + e.getMessage());
