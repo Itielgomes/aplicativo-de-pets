@@ -136,15 +136,15 @@ public class Animal {
     }
 
     public void cadastrarAnimal() {
-        // Implementar lógica para cadastrar animal
+
     }
 
     public void atualizarAnimal() {
-        // Implementar lógica para atualizar animal
+
     }
 
     public void excluirAnimal() {
-        // Implementar lógica para excluir animal
+        
     }
 
     public static List<Animal> animaisDoados(List<Animal> animais) {
