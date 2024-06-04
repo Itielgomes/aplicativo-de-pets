@@ -16,7 +16,6 @@ public class AdocaoTest {
         assertEquals(101, adocao.getIdPet());
 
         adocao.registrarAdocao();
-        // Você pode adicionar mais verificações aqui conforme necessário
     }
 
     @Test
@@ -31,9 +30,7 @@ public class AdocaoTest {
         assertEquals(102, adocao.getIdPet());
 
         adocao.processarAdocao();
-        // Você pode adicionar mais verificações aqui conforme necessário
     }
 
-    // Adicione mais testes conforme necessário
 
 }
