@@ -1,7 +1,9 @@
+import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Usuario {
+
+class Usuario {
     private static AtomicInteger idCounter = new AtomicInteger(1); 
 
     private int idUsuario;
@@ -18,6 +20,10 @@ public class Usuario {
         this.senha = senha;
         this.endereco = endereco;
         this.telefone = telefone;
+    }
+
+    public static Usuario login(List<Usuario> usuarios, String email, String senha) {
+        return null;
     }
 
     public int getIdUsuario() {
