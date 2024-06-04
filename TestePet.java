@@ -56,6 +56,5 @@ public class PetTest {
         assertEquals("Siamês branco", pet.getDescricao());
     }
 
-    // Adicione mais testes conforme necessário
 
 }
