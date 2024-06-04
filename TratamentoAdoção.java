@@ -23,7 +23,6 @@ class Adocao extends Adotador {
 
     public void registrarAdocao() {
         try {
-            // Simulate potential exception during registration
             if (Math.random() > 0.5) {
                 throw new Exception("Erro ao registrar adoção.");
             }
@@ -35,7 +34,6 @@ class Adocao extends Adotador {
 
     public void processarAdocao() {
         try {
-            // Simulate potential exception during processing
             if (Math.random() > 0.5) {
                 throw new Exception("Erro ao processar adoção.");
             }
