@@ -95,5 +95,86 @@ class Usuario {
         }
         System.out.println("Email ou senha incorretos.");
         return null;
+        public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Usuario[] usuarios = new Usuario[10]; 
+        int userCount = 0;
+
+        Usuario loggedUser = null;
+
+        while (true) {
+            System.out.println("Escolha uma opção:");
+            System.out.println("1. Cadastrar Usuário");
+            System.out.println("2. Atualizar Usuário");
+            System.out.println("3. Excluir Usuário");
+            System.out.println("4. Entrar Anônimo");
+            System.out.println("5. Login");
+            System.out.println("6. Sair");
+
+            int opcao = scanner.nextInt();
+            scanner.nextLine(); 
+
+            switch (opcao) {
+                case 1:
+                    System.out.print("Nome: ");
+                    String nome = scanner.nextLine();
+                    System.out.print("Email: ");
+                    String email = scanner.nextLine();
+                    System.out.print("Senha: ");
+                    String senha = scanner.nextLine();
+                    System.out.print("Endereço: ");
+                    String endereco = scanner.nextLine();
+                    System.out.print("Telefone: ");
+                    String telefone = scanner.nextLine();
+
+                    Usuario newUser = new Usuario(nome, email, senha, endereco, telefone);
+                    usuarios[userCount++] = newUser;
+                    newUser.cadastrarUsuario();
+                    break;
+                case 2:
+                    if (loggedUser != null) {
+                        System.out.print("Novo Nome: ");
+                        loggedUser.setNome(scanner.nextLine());
+                        System.out.print("Novo Email: ");
+                        loggedUser.setEmail(scanner.nextLine());
+                        System.out.print("Nova Senha: ");
+                        loggedUser.setSenha(scanner.nextLine());
+                        System.out.print("Novo Endereço: ");
+                        loggedUser.setEndereco(scanner.nextLine());
+                        System.out.print("Novo Telefone: ");
+                        loggedUser.setTelefone(scanner.nextLine());
+
+                        loggedUser.atualizarUsuario();
+                    } else {
+                        System.out.println("Você precisa estar logado para atualizar os dados.");
+                    }
+                    break;
+                case 3:
+                    if (loggedUser != null) {
+                        loggedUser.excluirUsuario();
+                        loggedUser = null;
+                    } else {
+                        System.out.println("Você precisa estar logado para excluir o usuário.");
+                    }
+                    break;
+                case 4:
+                    new Usuario("", "", "", "", "").entrarAnonimo();
+                    break;
+                case 5:
+                    System.out.print("Email: ");
+                    String loginEmail = scanner.nextLine();
+                    System.out.print("Senha: ");
+                    String loginSenha = scanner.nextLine();
+                    loggedUser = login(usuarios, loginEmail, loginSenha);
+                    break;
+                case 6:
+                    System.out.println("Saindo...");
+                    scanner.close();
+                    System.exit(0);
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+            }
+        }
+    }
     }
 }
