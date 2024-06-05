@@ -1,12 +1,6 @@
 import java.util.Date;
 
 public class Doacao {
-    private int idDoacao;
-    private int idPet;
-    private int idDoador;
-    private int idAdotante;
-    private Date dataDoacao;
-    private double valor;
 
     public int getIdDoacao() {
         return idDoacao;
