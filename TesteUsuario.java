@@ -1,25 +1,32 @@
 import org.junit.Test;
+import static org.junit.Assert.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import static org.junit.Assert.*;
 
 public class UsuarioTest {
 
     @Test
-    public void testLogin() {
-      
-        Usuario usuario1 = new Usuario("Alice", "alice@example.com", "senha123", "Rua A, 123", "123456789");
-        Usuario usuario2 = new Usuario("Bob", "bob@example.com", "senha456", "Rua B, 456", "987654321");
-      
-        List<Usuario> usuarios = new ArrayList<>();
-        usuarios.add(usuario1);
-        usuarios.add(usuario2);
+    public void testGettersAndSetters() {
+        
+        Usuario usuario = new Usuario("Joao", "joao@example.com", "senha123", "Rua A", "123456789");
+        
+        assertEquals("Joao", usuario.getNome());
+        assertEquals("joao@example.com", usuario.getEmail());
+        assertEquals("senha123", usuario.getSenha());
+        assertEquals("Rua A", usuario.getEndereco());
+        assertEquals("123456789", usuario.getTelefone());
+        
+        usuario.setNome("Pedro");
+        usuario.setEmail("pedro@example.com");
+        usuario.setSenha("outrasenha");
+        usuario.setEndereco("Rua C");
+        usuario.setTelefone("987654321");
 
-        Usuario usuarioLogado = Usuario.login(usuarios, "alice@example.com", "senha123");
-        assertNotNull(usuarioLogado);
-        assertEquals("Alice", usuarioLogado.getNome());
-
-        Usuario usuarioNaoLogado = Usuario.login(usuarios, "john@example.com", "senha789");
-        assertNull(usuarioNaoLogado);
+        assertEquals("Pedro", usuario.getNome());
+        assertEquals("pedro@example.com", usuario.getEmail());
+        assertEquals("outrasenha", usuario.getSenha());
+        assertEquals("Rua C", usuario.getEndereco());
+        assertEquals("987654321", usuario.getTelefone());
     }
 }
