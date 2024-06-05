@@ -11,8 +11,8 @@ public class UsuarioTest {
         
         Usuario usuario = new Usuario("Joao", "joao@example.com", "senha123", "Rua A", "123456789");
         
-        assertEquals("Joao", usuario.getNome());
-        assertEquals("joao@example.com", usuario.getEmail());
+        assertEquals("André", usuario.getNome());
+        assertEquals("andre@example.com", usuario.getEmail());
         assertEquals("senha123", usuario.getSenha());
         assertEquals("Rua A", usuario.getEndereco());
         assertEquals("123456789", usuario.getTelefone());
