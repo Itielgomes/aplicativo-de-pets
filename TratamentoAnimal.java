@@ -1,17 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-
-public class Animal {
-    private int idAnimal;
-    private String nome;
-    private int idade;
-    private String especie;
-    private String raca;
-    private String genero;
-    private String status;
-    private int idResponsavel;
-
-    public Animal(int idAnimal, String nome, int idade, String especie, String raca, String genero, String status, int idResponsavel) {
+   public Animal(int idAnimal, String nome, int idade, String especie, String raca, String genero, String status, int idResponsavel) {
         if (idAnimal <= 0) {
             throw new IllegalArgumentException("ID do animal deve ser maior que zero.");
         }
