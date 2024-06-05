@@ -9,8 +9,8 @@ public class AnimalTest {
     public void testAnimaisDoados() {
       
         Animal animal1 = new Animal(1, "Rex", 5, "Cachorro", "Vira-lata", "Macho", "doados", 1);
-        Animal animal2 = new Animal(2, "Mittens", 3, "Gato", "Persa", "Fêmea", "paraDoacao", 2);
-        Animal animal3 = new Animal(3, "Charlie", 2, "Cachorro", "Labrador", "Macho", "doados", 3);
+        Animal animal2 = new Animal(2, "Mimi", 3, "Gato", "Persa", "Fêmea", "paraDoacao", 2);
+        Animal animal3 = new Animal(3, "Kayn", 2, "Cachorro", "Labrador", "Macho", "doados", 3);
 
         List<Animal> animais = new ArrayList<>();
         animais.add(animal1);
