@@ -1,13 +1,7 @@
 import java.util.Date;
 
 public class Pet extends Animal {
-    private int idPet;
-    private int idAnimal;
-    private int idResponsavel;
-    private Date dataChegada;
-    private boolean vacinado;
-    private String descricao;
-
+ 
     public Pet(int idPet, int idAnimal, String nome, int idade, String especie, String raca, String genero, String status, int idResponsavel, Date dataChegada, boolean vacinado, String descricao) {
         super(idAnimal, nome, idade, especie, raca, genero, status, idResponsavel);
         setIdPet(idPet);
