@@ -1,80 +1,60 @@
+import static org.junit.Assert.*;
+import org.junit.*;
 import java.util.Date;
 
-public class Pet extends Animal {
-    private int idPet;
-    private int idAnimal;
-    private int idResponsavel;
-    private Date dataChegada;
-    private boolean vacinado;
-    private String descricao;
+public class PetTest {
 
-    public Pet(int idPet, int idAnimal, String nome, int idade, String especie, String raca, String genero, String status, int idResponsavel, Date dataChegada, boolean vacinado, String descricao) {
-        super(idAnimal, nome, idade, especie, raca, genero, status, idResponsavel);
-        this.idPet = idPet;
-        this.idAnimal = idAnimal;
-        this.idResponsavel = idResponsavel;
-        this.dataChegada = dataChegada;
-        this.vacinado = vacinado;
-        this.descricao = descricao;
+    @Test
+    public void testCadastrarPet() {
+        Pet pet = new Pet(1, 101, "Rex", 3, "Cachorro", "Labrador", "Macho", "Disponível", 201, new Date(), true, "Labrador amarelo");
+        assertNotNull(pet);
+        assertEquals(1, pet.getIdPet());
+        assertEquals(101, pet.getIdAnimal());
+        assertEquals(201, pet.getIdResponsavel());
+        assertEquals("Rex", pet.getNome());
+        assertEquals(3, pet.getIdade());
+        assertEquals("Cachorro", pet.getEspecie());
+        assertEquals("Labrador", pet.getRaca());
+        assertEquals("Macho", pet.getGenero());
+        assertEquals("Disponível", pet.getStatus());
+        assertTrue(pet.isVacinado());
+        assertEquals("Labrador amarelo", pet.getDescricao());
     }
 
-    public int getIdPet() {
-        return idPet;
+    @Test
+    public void testAtualizarPet() {
+        Pet pet = new Pet(2, 102, "Bob", 5, "Gato", "Persa", "Macho", "Disponível", 202, new Date(), false, "Persa cinza");
+        assertNotNull(pet);
+        assertEquals(2, pet.getIdPet());
+        assertEquals(102, pet.getIdAnimal());
+        assertEquals(202, pet.getIdResponsavel());
+        assertEquals("Bob", pet.getNome());
+        assertEquals(5, pet.getIdade());
+        assertEquals("Gato", pet.getEspecie());
+        assertEquals("Persa", pet.getRaca());
+        assertEquals("Macho", pet.getGenero());
+        assertEquals("Disponível", pet.getStatus());
+        assertFalse(pet.isVacinado());
+        assertEquals("Persa cinza", pet.getDescricao());
+
+        pet.setNome("Felix");
+        pet.setIdade(3);
+        pet.setEspecie("Gato");
+        pet.setRaca("Siamês");
+        pet.setGenero("Macho");
+        pet.setStatus("Adotado");
+        pet.setVacinado(true);
+        pet.setDescricao("Siamês branco");
+
+        assertEquals("Felix", pet.getNome());
+        assertEquals(3, pet.getIdade());
+        assertEquals("Gato", pet.getEspecie());
+        assertEquals("Siamês", pet.getRaca());
+        assertEquals("Macho", pet.getGenero());
+        assertEquals("Adotado", pet.getStatus());
+        assertTrue(pet.isVacinado());
+        assertEquals("Siamês branco", pet.getDescricao());
     }
 
-    public void setIdPet(int idPet) {
-        this.idPet = idPet;
-    }
 
-    public int getIdAnimal() {
-        return idAnimal;
-    }
-
-    public void setIdAnimal(int idAnimal) {
-        this.idAnimal = idAnimal;
-    }
-
-    public int getIdResponsavel() {
-        return idResponsavel;
-    }
-
-    public void setIdResponsavel(int idResponsavel) {
-        this.idResponsavel = idResponsavel;
-    }
-
-    public Date getDataChegada() {
-        return dataChegada;
-    }
-
-    public void setDataChegada(Date dataChegada) {
-        this.dataChegada = dataChegada;
-    }
-
-    public boolean isVacinado() {
-        return vacinado;
-    }
-
-    public void setVacinado(boolean vacinado) {
-        this.vacinado = vacinado;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public void cadastrarPet() {
-        System.out.println("Pet cadastrado com sucesso. ID: " + this.idPet);
-    }
-
-    public void atualizarPet() {
-        System.out.println("Pet atualizado com sucesso. ID: " + this.idPet);
-    }
-
-    public void excluirPet() {
-        System.out.println("Pet excluído com sucesso. ID: " + this.idPet);
-    }
 }
